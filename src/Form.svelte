@@ -1,7 +1,10 @@
 <script>
+import materialStore from './material-store.js';
 export let id;
 export let name = "";
 export let price;
+
+
 
 $: mode = id ? "edit" : "add";
 
@@ -14,6 +17,11 @@ function submit(){
     price = '';
     name = '';
     id = undefined;
+}
+
+if(mode === 'add'){
+materialStore.add(name, price);
+
 }
 
 function cancel(){
