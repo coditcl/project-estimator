@@ -1,30 +1,23 @@
 <script>
-	export let name;
+import Table from './Table.svelte';
+import Form from './Form.svelte';
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+<h1>Project Estimator</h1>
+<Form />
+
+<Table />
 </main>
 
+
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+main{
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+    flex: 1;
+    align-content: center;
+    width:80%;
+    margin: 0 auto;
+}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
 </style>
