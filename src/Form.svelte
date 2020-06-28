@@ -2,7 +2,7 @@
 import materialStore from './material-store.js';
 export let id;
 export let name = "";
-export let price = 5;
+export let price = 5
 
 
 
@@ -14,18 +14,22 @@ function submit(){
     if(!canSubmit){
         return
     }
-    price = '';
-    name = '';
-    id = undefined;
-}
-
+    
 if(mode === 'add'){
 materialStore.add(name, price);
-
 }
 
+if(mode === 'edit'){
+materialStore.edit(id, name, price);
+}
+
+    price = 5;
+    name = '';
+    id = undefined;
+
+}
 function cancel(){
-    price = '';
+    price = 5;
     name = '';
     id = undefined;
 }
