@@ -2,7 +2,7 @@
 import materialStore from './material-store.js';
 export let id;
 export let name = "";
-export let price;
+export let price = 5;
 
 
 

@@ -5,9 +5,11 @@ import Form from './Form.svelte';
 
 <main>
 <h1>Project Estimator</h1>
+
 <Form />
 
 <Table />
+
 </main>
 
 
