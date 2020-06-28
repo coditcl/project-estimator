@@ -20,6 +20,10 @@ function edit(id, name, price){
 
 };
 
+function remove(id){
+  materialStore.remove(id);
+}
+
 const formatter = new Intl.NumberFormat('en-US',{
     style: "currency",
     currency: "USD"
@@ -37,10 +41,10 @@ const formatter = new Intl.NumberFormat('en-US',{
  </thead>
  <tbody>
    {#each materials as material (material.id)}
-     <tr on:click={edit(material.id, material.name, material.price)}>
+     <tr class="editable" on:click={edit(material.id, material.name, material.price)}>
        <td>{material.name}</td>
        <td>{formatter.format(material.price)}</td>
-       <td><i class="far fa-trash-alt" /></td>
+       <td><i on:click|stopPropagation={remove(material.id)} class="far fa-trash-alt" /></td>
      </tr>
    {/each}
      <tr>
@@ -54,7 +58,7 @@ const formatter = new Intl.NumberFormat('en-US',{
 table{
     width: 100%;
 }
-tr{
+.editable{
     cursor: pointer;
 }
 </style>
