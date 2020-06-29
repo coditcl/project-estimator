@@ -4,7 +4,7 @@ export let id;
 export let name = "";
 export let price = 5
 
-
+let inputPrice;
 
 $: mode = id ? "edit" : "add";
 
@@ -30,6 +30,7 @@ materialStore.edit(id, name, price);
 }
 function cancel(){
     price = 5;
+    inputPrice.value = price;
     name = '';
     id = undefined;
 }
@@ -44,7 +45,7 @@ function cancel(){
 
    <label for="priceField
   ">Price</label>
-  <input type="number" min="0" step="any" bind:value={price} id="priceField" placeholder="Price">
+  <input type="number" min="0" step="any" bind:this={inputPrice} bind:value={price} id="priceField" placeholder="Price">
  </fieldset>
  <button disabled={!canSubmit} class="float-right" type="submit">{mode}</button>
  {#if mode === 'edit'}
